@@ -4,7 +4,7 @@ function TasksList() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/products')
+    fetch('http://localhost:3001/tasks')
       .then((data) => data.json())
       .then((tasks) => setTasks(tasks))
       .catch((e) => {
