@@ -6,8 +6,8 @@ const OPTIONS = {
   useUnifiedTopology: true,
 };
 
-const MONGO_DB_URL = process.env.localhost || 'mongodb://mongodb:27017/ToDoList';
-const DB_NAME = 'ToDoList';
+const MONGO_DB_URL = process.env.localhost || process.env.MONGO_DB_URL;
+const DB_NAME = 'ToDoList' || process.env.DB_NAME;
 
 let db = null;
 
