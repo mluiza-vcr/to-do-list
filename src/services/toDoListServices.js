@@ -11,5 +11,4 @@ const createNewTask = async (name, status) => {
   }
 };
 
-createNewTask("Fazer projeto", "lalala").then((res) => console.log(res));
-
+export default createNewTask;

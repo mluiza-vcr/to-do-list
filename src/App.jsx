@@ -1,12 +1,12 @@
 import './App.css';
-import TasksList from './components/tasksList.js'
+import React from 'react';
+import TasksList from './components/tasksList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       </header>
-      <section className = "TasksList">
+      <header className="App-header" />
+      <section className="TasksList">
         <TasksList />
       </section>
     </div>
