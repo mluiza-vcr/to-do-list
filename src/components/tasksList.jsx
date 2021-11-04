@@ -13,6 +13,10 @@ function TasksList() {
     setTasks(response);
   };
 
+  const deleteTask = async (id) => {
+    await toDoListServices.deleteTask(id);
+  };
+
   useEffect(() => {
     fetchAPItoDoListGet();
   }, []);
@@ -20,12 +24,21 @@ function TasksList() {
   return (
     <section className="task-list-container">
       <ul>
-        {tasks.map((t) => (
+        {tasks.map(({
+          name, status, data, _id,
+        }) => (
           <li>
-            {t.name}
+            {name}
             |
-            {t.status}
-            <button type="button">Deletar</button>
+            {status}
+            |
+            {data}
+            <button
+              onClick={() => { deleteTask(_id); }}
+              type="button"
+            >
+              Deletar
+            </button>
           </li>
         ))}
       </ul>

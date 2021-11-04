@@ -2,6 +2,8 @@ import axios from 'axios';
 
 const toDoListURL = 'https://to-do-list-mluiza.herokuapp.com/tasks';
 
+const toDoListDelete = (id) => `https://to-do-list-mluiza.herokuapp.com/tasks/${id}`;
+
 const createNewTask = async (name, status) => {
   try {
     await axios.post(toDoListURL, { name, status });
@@ -20,9 +22,10 @@ const showAllTasks = async () => {
   }
 };
 
-const deleteTask = async () => {
-  await axios.delete(toDoListURL);
-}
+const deleteTask = async (id) => {
+  await axios.delete(toDoListDelete(id));
+  console.log('depois do await');
+};
 
 export default {
   createNewTask,
