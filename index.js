@@ -22,6 +22,6 @@ app.get('/tasks', TasksControllers.getAllTasks);
 
 app.post('/tasks', TasksMiddlewares.validateName, TasksMiddlewares.validateStatus, TasksControllers.createTask);
 
-app.delete('/tasks', TasksControllers.deleteTask);
+app.delete('/tasks/:id', TasksControllers.deleteTask);
 
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
