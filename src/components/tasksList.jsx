@@ -25,6 +25,7 @@ function TasksList() {
             {t.name}
             |
             {t.status}
+            <button type="button">Deletar</button>
           </li>
         ))}
       </ul>

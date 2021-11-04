@@ -20,7 +20,13 @@ const showAllTasks = async () => {
   }
 };
 
+const deleteTask = async () => {
+  await axios.delete(toDoListURL, id);
+  return null;
+}
+
 export default {
   createNewTask,
   showAllTasks,
+  deleteTask,
 };
