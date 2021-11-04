@@ -21,8 +21,7 @@ const showAllTasks = async () => {
 };
 
 const deleteTask = async () => {
-  await axios.delete(toDoListURL, id);
-  return null;
+  await axios.delete(toDoListURL);
 }
 
 export default {
