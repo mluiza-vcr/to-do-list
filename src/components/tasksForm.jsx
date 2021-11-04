@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React, { useState } from 'react';
 import toDoListServices from '../services/toDoListServices';
 
@@ -20,12 +21,17 @@ function TasksForm() {
     if (response) {
       setErrors(response.message);
     }
+    location.reload();
   };
 
   return (
     <form>
       <input placeholder="Tarefa" name="tarefa" onChange={handleInputs} />
-      <input placeholder="Status" name="status" onChange={handleInputs} />
+      <select name="status" onChange={handleInputs}>
+        <option value="pendente">Pendente</option>
+        <option value="em andamento" selected>Em andamento</option>
+        <option value="pronto">Pronto</option>
+      </select>
       {errors ? <p>{errors}</p> : null}
       <button type="button" onClick={fetchAPItoDoListPost}>Criar tarefa</button>
     </form>

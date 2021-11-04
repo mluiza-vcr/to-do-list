@@ -20,7 +20,13 @@ function TasksList() {
   return (
     <section className="task-list-container">
       <ul>
-        {tasks.map((t) => <li>{t.name}</li>)}
+        {tasks.map((t) => (
+          <li>
+            {t.name}
+            |
+            {t.status}
+          </li>
+        ))}
       </ul>
       {errors ? <p>{errors}</p> : null}
     </section>
