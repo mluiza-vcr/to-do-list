@@ -1,9 +1,13 @@
 const connection = require('./connection');
 
+const date = new Date();
+
 const create = async ({ name, status }) => {
   const db = await connection();
-  const inserted = await db.collection('tasks').insertOne({ name, date: new Date(), status });
-  return { _id: inserted.insertedId, name, date, status };
+  const inserted = await db.collection('tasks').insertOne({ name, date, status });
+  return {
+    _id: inserted.insertedId, name, date, status,
+  };
 };
 
 const getAll = async () => {
@@ -14,5 +18,5 @@ const getAll = async () => {
 
 module.exports = {
   create,
-  getAll
-}
+  getAll,
+};

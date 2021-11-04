@@ -4,6 +4,8 @@ const cors = require('cors');
 
 const TasksControllers = require('./controllers/taskController');
 
+const TasksMiddlewares = require('./middlewares/tasksMiddlewares');
+
 require('dotenv').config();
 
 const app = express();
@@ -14,7 +16,6 @@ app.use(cors());
 
 app.get('/tasks', TasksControllers.getAllTasks);
 
-app.post('/tasks', TasksControllers.createTask);
+app.post('/tasks', TasksMiddlewares.validateName, TasksMiddlewares.validateStatus, TasksControllers.createTask);
 
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
-
