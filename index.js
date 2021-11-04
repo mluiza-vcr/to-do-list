@@ -24,4 +24,6 @@ app.post('/tasks', TasksMiddlewares.validateName, TasksMiddlewares.validateStatu
 
 app.delete('/tasks/:id', TasksControllers.deleteTask);
 
+app.put('/tasks/:id', TasksMiddlewares.validateName, TasksMiddlewares.validateStatus, TasksControllers.updateTask);
+
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
