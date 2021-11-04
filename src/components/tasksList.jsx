@@ -1,9 +1,12 @@
+/* eslint-disable no-restricted-globals */
 import React, { useEffect, useState } from 'react';
+import { TiDelete } from 'react-icons/ti';
 import toDoListServices from '../services/toDoListServices';
 
 function TasksList() {
   const [tasks, setTasks] = useState([]);
   const [errors, setErrors] = useState('');
+  // const [changeLiToInput, setChangeLiToInput] = useState(false);
 
   const fetchAPItoDoListGet = async () => {
     const response = await toDoListServices.showAllTasks();
@@ -15,6 +18,7 @@ function TasksList() {
 
   const deleteTask = async (id) => {
     await toDoListServices.deleteTask(id);
+    location.reload();
   };
 
   useEffect(() => {
@@ -22,28 +26,35 @@ function TasksList() {
   }, []);
 
   return (
-    <section className="task-list-container">
-      <ul>
-        {tasks.map(({
-          name, status, data, _id,
-        }) => (
-          <li>
-            {name}
-            |
-            {status}
-            |
-            {data}
-            <button
-              onClick={() => { deleteTask(_id); }}
-              type="button"
-            >
-              Deletar
-            </button>
-          </li>
-        ))}
-      </ul>
+    <table className="task-list-container">
+      <tr>
+        <th>Tarefa</th>
+        <th>Status</th>
+        <th>Data</th>
+        <th>Excluir</th>
+      </tr>
+      {tasks.map(({
+        name, status, date, _id,
+      }) => (
+        <>
+          <tr>
+            <td>{name}</td>
+            <td>{status}</td>
+            <td>{date}</td>
+            <td>
+              <button
+                onClick={() => { deleteTask(_id); }}
+                type="button"
+              >
+                <TiDelete />
+              </button>
+            </td>
+          </tr>
+        </>
+
+      ))}
       {errors ? <p>{errors}</p> : null}
-    </section>
+    </table>
   );
 }
 

@@ -12,3 +12,15 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.task-list-container > tr {
+  border: 1px solid black;
+}
+
+.task-list-container th {
+  border: 1px solid black;
+}
+
+.task-list-container td {
+  border: 1px solid black;
+}

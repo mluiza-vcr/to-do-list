@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import toDoListServices from '../services/toDoListServices';
 
 function TasksForm() {
-  const [inputValues, setInputValues] = useState({ tarefa: '', status: '' });
+  const [inputValues, setInputValues] = useState({ tarefa: '', status: 'em andamento' });
 
   const [errors, setErrors] = useState('');
 
