@@ -18,10 +18,9 @@ const getAll = async () => {
 };
 
 const deleteById = async (id) => {
-  if (!(ObjectId.isValid(id))) return null;
+  if (!ObjectId.isValid(id)) return null;
   const db = await connection();
-  await db.collection('tasks').findOneAndDelete({ _id: ObjectId(id) });
-  return null;
+  await db.collection('tasks').deleteOne({ _id: ObjectId(id) });
 };
 
 module.exports = {

@@ -18,7 +18,7 @@ const getAllTasks = async (req, res) => {
 const deleteTask = async (req, res) => {
   const { id } = req.params;
   await TaskModel.deleteTask(id);
-  res.status(200);
+  res.status(204).end();
 };
 
 module.exports = {
