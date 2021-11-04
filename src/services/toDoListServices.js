@@ -14,10 +14,9 @@ const createNewTask = async (name, status) => {
 const showAllTasks = async () => {
   try {
     const response = await axios.get(toDoListURL);
-    console.log(response);
     return response.data.tasks;
-  } catch {
-    return 'erro';
+  } catch (err) {
+    return err.response.data;
   }
 };
 
