@@ -1,14 +1,15 @@
-import toDoListURL from './endpoints';
+import axios from 'axios';
 
-const axios = require('axios').default;
+const toDoListURL = 'https://to-do-list-mluiza.herokuapp.com/tasks';
 
 const createNewTask = async (name, status) => {
   try {
     await axios.post(toDoListURL, { name, status });
+    return null;
   } catch (err) {
-    console.log(err);
+    return err.response.data;
   }
 };
 
-createNewTask();
+createNewTask("Fazer projeto", "lalala").then((res) => console.log(res));
 
