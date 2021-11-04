@@ -17,7 +17,7 @@ const getAllTasks = async (req, res) => {
 
 const deleteTask = async (req, res) => {
   const { id } = req.params;
-  await TaskModel.deleteTask(id);
+  await TaskModel.deleteById(id);
   res.status(204).end();
 };
 
