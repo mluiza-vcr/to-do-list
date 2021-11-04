@@ -20,6 +20,11 @@ function TasksList() {
     location.reload();
   };
 
+  const updateTask = async (id) => {
+    await toDoListServices.updateTask(id);
+    location.reload();
+  };
+
   useEffect(() => {
     fetchAPItoDoListGet();
   }, []);

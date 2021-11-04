@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const toDoListURL = 'https://to-do-list-mluiza.herokuapp.com/tasks';
 
-const toDoListDelete = (id) => `https://to-do-list-mluiza.herokuapp.com/tasks/${id}`;
+const toDoListId = (id) => `https://to-do-list-mluiza.herokuapp.com/tasks/${id}`;
 
 const createNewTask = async (name, status) => {
   try {
@@ -23,11 +23,21 @@ const showAllTasks = async () => {
 };
 
 const deleteTask = async (id) => {
-  await axios.delete(toDoListDelete(id));
+  await axios.delete(toDoListId(id));
+};
+
+const updateTask = async (id) => {
+  try {
+    await axios.put(toDoListId(id));
+    return null;
+  } catch (err) {
+    return err.response.data;
+  }
 };
 
 export default {
   createNewTask,
   showAllTasks,
   deleteTask,
+  updateTask,
 };
