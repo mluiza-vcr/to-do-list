@@ -2,6 +2,8 @@ const express = require('express');
 
 const cors = require('cors');
 
+const bodyParser = require('body-parser');
+
 const TasksControllers = require('./controllers/taskController');
 
 const TasksMiddlewares = require('./middlewares/tasksMiddlewares');
@@ -11,6 +13,8 @@ require('dotenv').config();
 const app = express();
 
 const PORT = process.env.PORT || 3001;
+
+app.use(bodyParser.json());
 
 app.use(cors());
 

@@ -1,6 +1,6 @@
 const connection = require('./connection');
 
-const date = new Date();
+const date = new Date().toLocaleDateString();
 
 const create = async ({ name, status }) => {
   const db = await connection();
