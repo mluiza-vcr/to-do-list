@@ -1,36 +1,29 @@
-import React, { useState } from 'react';
-import createNewTask from '../services/toDoListServices';
+import React, { useEffect, useState } from 'react';
+import toDoListServices from '../services/toDoListServices';
 
 function TasksList() {
-  // const [tasks, setTasks] = useState([]);
-
-  const [inputValues, setInputValues] = useState({ tarefa: '', status: '' });
-
+  const [tasks, setTasks] = useState([]);
   const [errors, setErrors] = useState('');
 
-  const { tarefa, status } = inputValues;
-
-  const handleInputs = ({ target: { name, value } }) => {
-    setInputValues({
-      ...inputValues,
-      [name]: value,
-    });
-  };
-
-  const fetchAPItoDoListPost = async () => {
-    const response = await createNewTask(tarefa, status);
-    if (response) {
-      setErrors(response.message);
+  const fetchAPItoDoListGet = async () => {
+    const response = await toDoListServices.showAllTasks();
+    if (!response) {
+      setErrors('Não há tarefas');
     }
+    setTasks(response);
   };
+
+  useEffect(() => {
+    fetchAPItoDoListGet();
+  }, []);
 
   return (
-    <form>
-      <input placeholder="Tarefa" name="tarefa" onChange={handleInputs} />
-      <input placeholder="Status" name="status" onChange={handleInputs} />
+    <section className="task-list-container">
+      <ul>
+        {tasks.map((t) => <li>{t.name}</li>)}
+      </ul>
       {errors ? <p>{errors}</p> : null}
-      <button type="button" onClick={fetchAPItoDoListPost}>Criar tarefa</button>
-    </form>
+    </section>
   );
 }
 

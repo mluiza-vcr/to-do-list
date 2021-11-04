@@ -34,3 +34,6 @@ Endereço da aplicação no Heroku, se houver (ou outro serviço de deployment);
 Ter um linter configurado;
 O projeto deverá ser entregue via repositório pessoal no GitHub (utilize boas práticas de criação/nomeação de branches, além de mensagens de commits bem descritas e commits com um escopo nítido).
 Boa sorte!
+
+https://dashboard.heroku.com/apps/to-do-list-mluiza/deploy/github
+https://cloud.mongodb.com/v2/61831836beea9a2884d3eb87#metrics/replicaSet/6183193614b15b42fd3c6962/explorer/Cluster0/tasks/find
