@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb');
 const connection = require('./connection');
 
 const date = new Date().toLocaleDateString();
@@ -16,7 +17,15 @@ const getAll = async () => {
   return all;
 };
 
+const deleteById = async (id) => {
+  if (!(ObjectId.isValid(id))) return null;
+  const db = await connection();
+  await db.collection('tasks').findOneAndDelete({ _id: ObjectId(id) });
+  return null;
+};
+
 module.exports = {
   create,
   getAll,
+  deleteById,
 };
