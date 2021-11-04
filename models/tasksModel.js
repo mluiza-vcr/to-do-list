@@ -23,10 +23,10 @@ const deleteById = async (id) => {
   await db.collection('tasks').deleteOne({ _id: ObjectId(id) });
 };
 
-const updateById = async (id) => {
+const updateById = async (id, name, status) => {
   if (!ObjectId.isValid(id)) return null;
   const db = await connection();
-  await db.collection('tasks').updateOne({ _id: ObjectId(id) });
+  await db.collection('tasks').updateOne({ _id: ObjectId(id) }, { $set: { date, name, status } });
 };
 
 module.exports = {

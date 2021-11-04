@@ -23,7 +23,8 @@ const deleteTask = async (req, res) => {
 
 const updateTask = async (req, res) => {
   const { id } = req.params;
-  await TaskModel.updateById(id);
+  const { name, status } = req.body;
+  await TaskModel.updateById(id, name, status);
   res.status(204).end();
 };
 
