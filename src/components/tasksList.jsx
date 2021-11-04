@@ -6,7 +6,6 @@ import toDoListServices from '../services/toDoListServices';
 function TasksList() {
   const [tasks, setTasks] = useState([]);
   const [errors, setErrors] = useState('');
-  // const [changeLiToInput, setChangeLiToInput] = useState(false);
 
   const fetchAPItoDoListGet = async () => {
     const response = await toDoListServices.showAllTasks();
@@ -37,7 +36,7 @@ function TasksList() {
         name, status, date, _id,
       }) => (
         <>
-          <tr>
+          <tr key={_id}>
             <td>{name}</td>
             <td>{status}</td>
             <td>{date}</td>
