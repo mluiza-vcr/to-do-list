@@ -39,3 +39,5 @@
 ```
 
  - O projeto vai iniciar em: http://localhost:3000/
+
+ - Deploy do projeto em: https://to-do-list-mluiza-front-end.herokuapp.com/
