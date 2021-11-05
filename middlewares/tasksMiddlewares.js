@@ -1,12 +1,12 @@
 const validateName = (req, res, next) => {
   const { name } = req.body;
-  if (!name) return res.status(422).json({ message: 'Este campo é obrigatório' });
+  if (!name) return res.status(422).json({ message: 'O campo "tarefa" é obrigatório' });
   next();
 };
 
 const validateStatus = (req, res, next) => {
   const { status } = req.body;
-  if (!status) return res.status(422).json({ message: 'Este campo é obrigatório' });
+  if (!status) return res.status(422).json({ message: 'O campo "status" é obrigatório' });
   next();
 };
 
