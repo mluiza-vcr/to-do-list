@@ -24,16 +24,20 @@ function Update() {
   };
 
   return (
-    <form>
-      <input placeholder="Tarefa" name="tarefa" onChange={handleInputs} />
-      <select name="status" onChange={handleInputs}>
-        <option value="pendente">Pendente</option>
-        <option value="em andamento" selected>Em andamento</option>
-        <option value="pronto">Pronto</option>
-      </select>
-      {errors ? <p>{errors}</p> : null}
-      <button type="button" onClick={updateTask}>Atualizar</button>
-    </form>
+    <div className="App">
+      <section className="Tasks">
+        <form className="form-container">
+          <input placeholder="Tarefa" name="tarefa" onChange={handleInputs} />
+          <select name="status" onChange={handleInputs}>
+            <option value="pendente">Pendente</option>
+            <option value="em andamento" selected>Em andamento</option>
+            <option value="pronto">Pronto</option>
+          </select>
+          {errors ? <p>{errors}</p> : null}
+          <button type="button" onClick={updateTask}>Atualizar</button>
+        </form>
+      </section>
+    </div>
   );
 }
 

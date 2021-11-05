@@ -3,18 +3,51 @@
 }
 
 .Tasks{
-  background-color: pink;
+  background: linear-gradient(to right, #cc95c0, #dbd4b4, #7aa1d2);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 20px;
   color: black;
 }
 
 .form-container {
   padding: 50px;
+}
+
+.form-container > button {
+  background-color: #cc95c0;
+  padding: 10px;
+  margin: 10px;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+.form-container > button:hover {
+  background-color: #ca5db3;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.form-container > input {
+  background-color: #a3c6f0;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  border-radius: 5px;
+  border: 3px solid black;
+  margin: 10px;
+  width: 300px;
+}
+
+.form-container > select {
+  background-color: #ccc190;
+  padding: 9px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  border-radius: 5px;
+  border: 3px solid black;
+  margin: 10px;
 }
 
 .task-list-container > tr {
@@ -23,8 +56,24 @@
 
 .task-list-container th {
   border: 1px solid black;
+  background-color: #c26baf;
+  padding: 10px;
+  border-radius: 5px;
+  border: 3px solid black;
 }
 
 .task-list-container td {
   border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.title {
+  color: #040320;
+  font-size: 40px;
+  border: 3px solid black;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
 }
