@@ -2,12 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { TiDelete } from 'react-icons/ti';
 import { GrUpdate } from 'react-icons/gr';
+import { useHistory } from 'react-router';
 import toDoListServices from '../services/toDoListServices';
 
 function TasksList() {
   const [tasks, setTasks] = useState([]);
-  // const [errors, setErrors] = useState('');
-  const [changeToInput, setChangeToInput] = useState(false);
 
   const fetchAPItoDoListGet = async () => {
     const response = await toDoListServices.showAllTasks();
@@ -19,16 +18,11 @@ function TasksList() {
     location.reload();
   };
 
-  // const updateTask = async (id, name, status) => {
-  //   const update = await toDoListServices.updateTask(id, name, status);
-  //   if (update) setErrors(update.message)
-  // };
+  const history = useHistory();
 
-  const updateInput = ({ target: { id } }, idMap) => {
-    if (id === idMap) {
-      if (!changeToInput) setChangeToInput(true);
-      else setChangeToInput(false);
-    }
+  const handleClick = (id) => {
+    history.push('/update');
+    localStorage.setItem('id', id);
   };
 
   useEffect(() => {
@@ -49,11 +43,7 @@ function TasksList() {
       }, index) => (
         <>
           <tr key={_id}>
-            {changeToInput ? <input /> : (
-              <td>
-                {name}
-              </td>
-            )}
+            <td>{name}</td>
             <td>{status}</td>
             <td>{date}</td>
             <td>
@@ -66,7 +56,7 @@ function TasksList() {
             </td>
             <td>
               <button
-                onClick={() => updateInput(_id, index)}
+                onClick={() => handleClick(_id)}
                 type="button"
                 id={index}
               >
@@ -75,9 +65,7 @@ function TasksList() {
             </td>
           </tr>
         </>
-
       ))}
-      {/* {errors ? <p>{errors}</p> : null} */}
     </table>
   );
 }

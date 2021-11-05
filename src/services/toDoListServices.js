@@ -35,6 +35,8 @@ const updateTask = async (id, name, status) => {
   }
 };
 
+updateTask('61845eece69edf1310099e5f', 'Blabla', 'pronto').then((res) => console.log(res));
+
 export default {
   createNewTask,
   showAllTasks,
