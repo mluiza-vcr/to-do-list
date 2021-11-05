@@ -26,32 +26,43 @@
 }
 
 .form-container > button:hover {
-  background-color: #ca5db3;
+  background-color: black;
   cursor: pointer;
+  color: #cc95c0;
+  border: 5px solid #cc95c0;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .form-container > input {
-  background-color: #a3c6f0;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
   border-radius: 5px;
   border: 3px solid black;
   margin: 10px;
   width: 300px;
+  cursor: pointer;
 }
 
 .form-container > select {
-  background-color: #ccc190;
+  background-color: #a3c6f0;
   padding: 9px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
   border-radius: 5px;
   border: 3px solid black;
   margin: 10px;
+  cursor: pointer;
 }
 
 .task-list-container > tr {
   border: 1px solid black;
+}
+
+.task-list-container > tr:hover {
+  background-color: black;
+  cursor: pointer;
+  color: #cc95c0;
+  border: 5px solid #cc95c0;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .task-list-container th {
@@ -69,11 +80,14 @@
   border: 2px solid black;
 }
 
+
 .title {
   color: #040320;
-  font-size: 40px;
+  font-size: 25px;
   border: 3px solid black;
-  padding: 15px;
+  padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 5px;
+  background-color: #c26baf;
+  margin-bottom: 80px;
 }
