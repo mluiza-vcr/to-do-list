@@ -5,7 +5,6 @@ import TasksList from '../components/tasksList';
 function Home() {
   return (
     <div className="App">
-      <header className="App-header" />
       <section className="Tasks">
         <TasksForm />
         <TasksList />

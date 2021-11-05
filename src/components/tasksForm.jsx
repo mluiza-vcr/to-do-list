@@ -25,7 +25,7 @@ function TasksForm() {
   };
 
   return (
-    <form>
+    <form className="form-container">
       <input placeholder="Tarefa" name="tarefa" onChange={handleInputs} />
       <select name="status" onChange={handleInputs}>
         <option value="pendente">Pendente</option>
