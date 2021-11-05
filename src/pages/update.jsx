@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 import toDoListServices from '../services/toDoListServices';
 
 function Update() {
@@ -13,10 +14,13 @@ function Update() {
     });
   };
 
+  const history = useHistory();
+
   const updateTask = async () => {
     const id = localStorage.getItem('id');
     const update = await toDoListServices.updateTask(id, tarefa, status);
     if (update) setErrors(update.message);
+    else history.push('/');
   };
 
   return (

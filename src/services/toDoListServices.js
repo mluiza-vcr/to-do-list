@@ -28,14 +28,12 @@ const deleteTask = async (id) => {
 
 const updateTask = async (id, name, status) => {
   try {
-    await axios.put(toDoListId(id, name, status));
+    await axios.put(toDoListId(id), { name, status });
     return null;
   } catch (err) {
     return err.response.data;
   }
 };
-
-updateTask('61845eece69edf1310099e5f', 'Blabla', 'pronto').then((res) => console.log(res));
 
 export default {
   createNewTask,
