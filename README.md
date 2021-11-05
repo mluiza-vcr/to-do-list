@@ -1,36 +1,21 @@
-# to-do-list
-Desafio técnico
+## Para visualizar o projeto de BackEnd, entre na branch 'back-end' e rode os seguintes comandos:
 
-Considerações sobre o desafio
+```
+git checkout back-end
 
-O prazo para a entrega da solução vai do recebimento do desafio até o dia 05/11 12h00.
+npm install
+```
 
-Você foi a pessoa contratada para desenvolver um sistema capaz de auxiliar as pessoas colaboradoras a se organizar e ter mais produtividade.
+### Siga os passos do README do 'back-end'.
 
-Na Ebytr o time de desenvolvimento utiliza a Stack MERN para criar suas aplicações. Foi combinado com a Ebytr que você utilizará essa mesma Stack para resolver o problema de organização e produtividade da empresa.
+---
 
-Abaixo estão (i) os requisitos técnicos, (ii) as funcionalidades, (iii) critérios de avaliação do desafio e (iv) algumas dicas importantes.
+## Para visualizar o projeto de FrontEnd, entre na branch 'front-end' e rode os seguintes comandos:
 
-Requisitos técnicos:
-* Front-End em React;
-* Back-End em NodeJS, com MongoDB;
-* Arquitetura em camadas;
+```
+git checkout front-end
 
-Funcionalidades:
-* Visualizar a lista de tarefas;
-* Esta lista deve ser ordenável por ordem alfabética, data de criação ou por status;
-* Inserir uma nova tarefa na lista;
-* Remover uma tarefa da lista;
-* Atualizar uma tarefa da lista;
-* A tarefa deve possuir um status editável: pendente, em andamento ou pronto;
+npm install
+```
 
-
-Dicas importantes!
-Ter uma boa cobertura de testes Front e Back;
-Aplicar boas práticas de escrita de código;
-Documentação do projeto (README), que inclua:
-Passo a passo para instalar e executar o projeto. Incluindo instruções especiais para instalar dependências e/ou bancos de dados, se houver;
-Endereço da aplicação no Heroku, se houver (ou outro serviço de deployment);
-Ter um linter configurado;
-O projeto deverá ser entregue via repositório pessoal no GitHub (utilize boas práticas de criação/nomeação de branches, além de mensagens de commits bem descritas e commits com um escopo nítido).
-Boa sorte!
+### Siga os passos do README do 'front-end'.
